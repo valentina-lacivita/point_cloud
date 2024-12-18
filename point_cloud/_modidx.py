@@ -5,4 +5,12 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://valentina-lacivita.github.io',
                 'git_url': 'https://github.com/valentina-lacivita/point_cloud',
                 'lib_path': 'point_cloud'},
-  'syms': {'point_cloud.core': {'point_cloud.core.foo': ('core.html#foo', 'point_cloud/core.py')}}}
+  'syms': { 'point_cloud.core': { 'point_cloud.core.calculate_C_point': ('core.html#calculate_c_point', 'point_cloud/core.py'),
+                                  'point_cloud.core.calculate_C_points': ('core.html#calculate_c_points', 'point_cloud/core.py'),
+                                  'point_cloud.core.get_centroid': ('core.html#get_centroid', 'point_cloud/core.py'),
+                                  'point_cloud.core.get_labeled_points': ('core.html#get_labeled_points', 'point_cloud/core.py'),
+                                  'point_cloud.core.load_input_data': ('core.html#load_input_data', 'point_cloud/core.py'),
+                                  'point_cloud.core.plot_ABC': ('core.html#plot_abc', 'point_cloud/core.py'),
+                                  'point_cloud.core.plot_convex_hull': ('core.html#plot_convex_hull', 'point_cloud/core.py'),
+                                  'point_cloud.core.plot_points': ('core.html#plot_points', 'point_cloud/core.py'),
+                                  'point_cloud.core.plot_vectors': ('core.html#plot_vectors', 'point_cloud/core.py')}}}

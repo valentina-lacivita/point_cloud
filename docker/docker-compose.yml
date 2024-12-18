@@ -1,0 +1,7 @@
+services:
+  cpoints:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+      - ../data:/data
