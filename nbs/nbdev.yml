@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "point_cloud"
+  site-url: "https://valentina-lacivita.github.io/point_cloud"
+  description: "Adding points away from a point cloud"
+  repo-branch: main
+  repo-url: "https://github.com/valentina-lacivita/point_cloud"
