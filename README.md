@@ -98,12 +98,24 @@ First checkout the repository and run
 pipenv install --dev
 ```
 
+The next step is to install the package
+
+``` shell
+pip install -e '.[dev]'
+```
+
+and then run
+
 ``` shell
 pipenv run nbdev_install_quarto
 ```
 
 ``` shell
 pipenv run nbdev_install_hooks
+```
+
+``` shell
+pipenv run pre-commit install
 ```
 
 #### 2. Enable the new kernel for Jupyter
@@ -124,12 +136,6 @@ In that shell run:
 
 ``` shell
 python -m ipykernel install --user --name=point_cloud
-```
-
-The next step is to install the package
-
-``` shell
-pip install -e '.[dev]'
 ```
 
 Then, launch jupyter notebook:
