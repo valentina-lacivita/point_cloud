@@ -83,6 +83,11 @@ calculate_C_points(input_data, output_result, output_plot_file=output_plot, dist
 > and the [core
 > documentation](https://valentina-lacivita.github.io/point_cloud/core.html).
 
+Given the characteristics of the problem, the emphasis in documentation
+quality and time constraints, I have chosen to leverage
+[nbdev](https://nbdev.fast.ai/) to write, test, document, and distribute
+software package.
+
 ### Contributing
 
 #### 1. Setup the dev environment
@@ -93,7 +98,15 @@ First checkout the repository and run
 pipenv install --dev
 ```
 
-#### 2. Enable the new kernel for the Jupyter notebook
+``` shell
+pipenv run nbdev_install_quarto
+```
+
+``` shell
+pipenv run nbdev_install_hooks
+```
+
+#### 2. Enable the new kernel for Jupyter
 
 Run in your project folder:
 
@@ -113,7 +126,13 @@ In that shell run:
 python -m ipykernel install --user --name=point_cloud
 ```
 
-Launch jupyter notebook:
+The next step is to install the package
+
+``` shell
+pip install -e '.[dev]'
+```
+
+Then, launch jupyter notebook:
 
 ``` shell
 jupyter notebook
@@ -124,9 +143,12 @@ option.
 
 #### 3. Change or add new code
 
-Add or change existing notebook code in `nbs` folder. As you commit the
-changes to git a pre-commit hook will automatically generate the `.py`
-module code and clean up metadata. To update the readme and run tests,
+To add/change code, update jupyter notebooks in folder `nbs`. Before
+committing the changes open the virtual environment as shown previously.
+
+As you commit the changes to git with `git commit`, a pre-commit hook
+will automatically generate the `.py` modules from the Jupyter notebooks
+and clean up metadata. To update the `README.md` and run tests, you can
 run
 
 ``` shell
