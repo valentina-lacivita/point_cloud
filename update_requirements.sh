@@ -4,7 +4,7 @@ new_reqs=$(echo "requirements = $reqs")
 
 file="settings.ini"
 if grep -q "# requirements =" "$file"; then
-    sed -ie 's/# requirements =.*/'"$new_reqs"'/' $file
+    sed -i -e 's/# requirements =.*/'"$new_reqs"'/' $file
 else
-    sed -ie 's/requirements =.*/'"$new_reqs"'/' $file
+    sed -i -e 's/^requirements =.*/'"$new_reqs"'/' $file
 fi
