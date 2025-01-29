@@ -138,10 +138,10 @@ In that shell run:
 python -m ipykernel install --user --name=point_cloud
 ```
 
-Then, launch jupyter notebook:
+Then, launch jupyter lab:
 
 ``` shell
-jupyter notebook
+jupyter lab
 ```
 
 In your notebook, Kernel -\> Change Kernel. Your kernel should now be an
