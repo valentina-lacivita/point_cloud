@@ -21,7 +21,7 @@ Documentation can be found hosted on this GitHub
 
 We have defined a minimalist Docker wrapper that installs this package,
 runs it on the input data, and export the results. After cloning this
-repo, go to the `docker` folder and run the command:
+repo, go to the `docker` folder and run the command (which may need root permissions):
 
 ``` sh
 docker compose up --build
