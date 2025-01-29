@@ -101,7 +101,7 @@ pipenv install --dev
 The next step is to install the package
 
 ``` shell
-pip install -e '.[dev]'
+pipenv run pip install -e '.[dev]'
 ```
 
 and then run
