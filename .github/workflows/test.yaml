@@ -1,7 +1,42 @@
+# name: CI
+# on:  [workflow_dispatch, pull_request, push]
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps: [uses: fastai/workflows/nbdev-ci@master]
+
 name: CI
-on:  [workflow_dispatch, pull_request, push]
+
+on: [workflow_dispatch, pull_request, push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps: [uses: fastai/workflows/nbdev-ci@master]
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install nbdev
+
+    - name: Install nbdev hooks
+      run: nbdev_install_hooks
+
+    - name: Export notebooks
+      run: nbdev_export
+
+    - name: Check for unstripped notebooks
+      run: |
+        if [[ `git status --porcelain -uno` ]]; then
+          git status -uno
+          echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_hooks"
+          git status -s # display the status to see which nbs need cleaning up
+          exit 1
+        fi
